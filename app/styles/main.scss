@@ -1,0 +1,132 @@
+// bower:scss
+@import "jeet/scss/jeet/index.scss";
+// endbower
+
+$primaryFontStack: "Helvetica", Arial, sans-serif;
+
+$dfs: 18;
+
+$primaryColor: #000000;
+$secondaryColor: #FFFFFF;
+
+body {
+
+	background: #f4efd1;
+
+	font: ($dfs/16)*1em $primaryFontStack;
+	letter-spacing: (3.1/18)*1em; // 0.21em za 16px
+	
+	line-height: 24/16;
+	
+	margin: 0 0.5em;
+	
+	header {
+		
+		position: fixed;
+		z-index: 999;
+		
+		top: 0.5em;
+		left: 0.5em;
+		right: 0.5em;
+		
+		nav {
+			
+			a {
+				
+				color: $primaryColor;
+				text-decoration: none;
+			}
+			
+			a:not(#logo):hover {
+				
+				border-bottom: 1px solid black;
+				padding-bottom: 2/$dfs*1em;
+			}
+			
+			a:not(#logo) {
+				
+				margin-right: 3em;
+			}
+			a#logo {
+				
+				float: right;
+				
+				letter-spacing: (5.5/18)*1em; // 0.21em za 16px
+				
+				span {
+					display: inline-block;
+					position: relative;
+				}
+				
+				span#logo-1 {  } // k
+				span#logo-2 { transform: rotate(15deg); top: (1/$dfs)*1em; } // l
+				span#logo-3 { transform: rotate(30deg); top: (2/$dfs)*1em; } // e
+				span#logo-4 { transform: rotate(45deg); top: (2.5/$dfs)*1em; } // m
+				span#logo-5 { transform: rotate(60deg); top: (3/$dfs)*1em; } // e
+				span#logo-6 { transform: rotate(75deg); top: (4/$dfs)*1em; } // n
+				
+				span#logo-7 { transform: rotate(90deg); top: (3/$dfs)*1em; } // i
+				span#logo-8 { transform: rotate(72deg); top: (5/$dfs)*1em; left: (0/$dfs)*1em; } // l
+				span#logo-9 { transform: rotate(54deg); top: (-3/$dfs)*1em;left: (4/$dfs)*1em; } // o
+				span#logo-10 { transform: rotate(36deg); top: (-7/$dfs)*1em; left: (2/$dfs)*1em; } // v
+				span#logo-11 { transform: rotate(18deg); top: (-12/$dfs)*1em; left: (3/$dfs)*1em; } // a
+				span#logo-12 { top: (-15/$dfs)*1em; } // r
+				
+				span.under {
+					clear: both;
+					float: right;
+					line-height: 0;
+				}
+			}
+		}
+	}
+	
+	header + section {
+		margin-top: 10em;
+	}
+	
+	section {
+		
+		position: relative;
+		
+		aside {
+			
+			@include col(1/3, 0, 0, 0, 0);
+			position: absolute;
+			z-index: 2;
+			
+			font-size: 14/$dfs*1em;
+		}
+		
+		main {
+							
+			box-sizing: border-box;
+				
+			img {
+				
+				display: none;
+				
+				position: relative;
+				width: 100%;
+				height: auto;
+				
+			}
+			
+			img.visible {
+				display: block;
+			}
+		}
+		
+	}
+	
+	div#camera {
+		
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		
+		border: 1px solid black;
+		width: 10em;
+		height: 1em;
+	}
+}
